@@ -35,7 +35,7 @@ public class HomeController {
 		
 		return "home";
 		
-		//sunghyun
+		//sunghyun hihi
 	}
 
 	// hi hi
