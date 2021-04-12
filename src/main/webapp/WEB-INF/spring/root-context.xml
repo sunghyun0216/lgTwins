@@ -23,5 +23,15 @@
 	<bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession">
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactoryBean"></constructor-arg>
 	</bean>
-		
+	
+	<!-- 분할된 파일 조각들을 하나로 합쳐주는 객체를 생성 -->
+	<bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="MultipartResolver">
+		<!-- 한글 넘어 올 시 엔코딩 확인하기 -->
+		<property name="defaultEncoding" value="UTF-8"></property>
+		<!-- 파일 하나당 허용 최대 크기 사이즈를 제한하기 위한 목적, 단위 : byte -->
+		<property name="maxUploadSizePerFile"  value="10485760"></property> 
+		<!--전체 파일 최대 크기 제한 단위 : byte -->
+		<property name="maxUploadSize" value=" 104857600"></property>
+	</bean>
+	
 </beans>
